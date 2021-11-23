@@ -24,7 +24,7 @@ This is a REST API application that returns an issues filtered by label
 
 ### Clone RestAPI project
     git init
-    sudo git clone https://github.com/Kv-DevOps-094/rest-api.git /home/projectIssues/restapi
+    sudo git clone https://github.com/DevOps-Kv-116/rest-api /home/projectIssues/restapi
     sudo git clone -b develop https://github.com/Kv-DevOps-094/rabbit-to-bd.git /home/projectIssues/rabbit-to-bd
 
 ### Copy service files to:
