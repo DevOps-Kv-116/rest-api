@@ -33,7 +33,7 @@ This is a REST API application that returns an issues filtered by label
     cp -f /home/projectIssues/restapi/docker.restapi.service /etc/systemd/system/
 
 ### Create RestAPI container
-    sudo docker build --tag="resrapi" /home/projectIssues/restapi/
+    sudo docker build --tag="restapi" /home/projectIssues/restapi/
     sudo docker build --tag="rabbit_to_postgres" /home/projectIssues/rabbit-to-bd/
 ### Start services
     systemctl daemon-reload
