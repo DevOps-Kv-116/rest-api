@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: restapi
+    deployed: ${TF_VAR_project}
+  name: restapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restapi
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: restapi
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_DB
+              value: issuedb
+            - name: POSTGRES_HOST
+              value: ${db_host}
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_PW
+              value: ${db_pass}
+            - name: POSTGRES_USER
+              value: ${db_user}
+          image: gcr.io/${TF_VAR_project}/rest-api
+          name: restapi
+          ports:
+            - containerPort: 5000
+          resources: {}
+      restartPolicy: Always
+status: {}
+

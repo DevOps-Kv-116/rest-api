@@ -18,5 +18,10 @@ pipeline {
                 sh '''docker push "gcr.io/${TF_VAR_project}/rest-api"'''
             }
         }
+        stage('Deploy') {
+            steps {
+                sh '''./deploy.sh''' 
+            }
+        }
     }
 }
